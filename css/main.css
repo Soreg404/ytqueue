@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+}
+
+::selection {
+	color: rgb(0,0,0);
+	color: var(--font_d);
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+::placeholder {
+	color: rgb(190, 190, 190);
+}
+
+body {
+	background-color: rgb(32, 32, 32);
+	overflow-x: hidden;
+	overflow-y: overlay;
+	color: rgb(240, 240, 240);
+}
+
+#content {
+	font-family: Arial;
+	color: rgb(242, 242, 242);
+}
+
+.hover-underline {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 0;
+	height: 1px;
+	background-color: rgb(220, 20, 60);
+	transition: width 0.2s;
+}
+*:hover>.hover-underline {
+	width: 80%;
+}
+
+#add-bar-container {
+	position: relative;
+	width: 100vw;
+	height: 80px;
+	padding: 40px 0;
+	background-color: rgb(55, 55, 55);
+	z-index: 2;
+}
+
+#add-bar-wrap {
+	position: relative;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: rgb(72, 72, 72);
+	border-radius: 3px;
+	clear: both;
+	z-index: 10;
+}
+
+#add-bar {
+	float: left;
+	width: calc(100% - 170px);
+	height: 50px;
+	margin: 8px;
+	padding: 5px;
+	outline: none;
+	border: 2px solid rgb(100, 100, 100);
+	border-radius: 20px;
+	transition: border-radius 0.4s;
+	font-size: 22px;
+}
+#add-bar:hover {
+	border-radius: 10px;
+}
+#add-bar:focus {
+	border-radius: 2px;
+	transition: border-radius 0.2s;
+}
+#add-bar::selection {
+	color: rgb(220, 220, 220);
+	background-color: rgb(43, 43, 43);
+}
+
+#add-button {
+	position: relative;
+	float: left;
+	width: 120px;
+	height: 26px;
+	margin: 10px;
+	padding: 17px 0;
+	background-color: rgb(32, 32, 32);
+	color: rgb(220, 20, 60);
+	font-size: 22px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+#add-button:hover {
+	background-color: rgb(52, 52, 52);
+}
+
+#add-err {
+	position: absolute;
+	bottom: 40px;
+	left: 12%;
+	color: rgb(224, 14, 14);
+	font-size: 17px;
+	font-family: Consolas;
+	z-index: 5;
+}
+
+@media only screen and (max-width: 767px) {
+	#add-bar-wrap {
+		width: 95%;
+	}
+	#add-bar-container {
+		min-height: 120px;
+	}
+}
