@@ -25,8 +25,6 @@ function comms(type = '', options = {}, sc = null, err = null) {
 
 $(document).ready(function() {
 	
-	player.tag = playerTag;
-	
 	$("#add-button").click(addToQueue);
 	$("#add-bar").keypress(function (e) {
 		if (e.which == 13) {
@@ -67,7 +65,7 @@ function updateConnection() {
 	});
 }
 
-var start = true;
+var start = true, canUpdateQueue = false;
 
 /* REFRESH DATA */
 function update(data) {
@@ -150,7 +148,7 @@ function update(data) {
 		console.log('%c -- %cPLAYER CHANGE%c -- ', 'color: rgb(140, 140, 140)', 'color: rgb(180, 220, 220)', 'color: rgb(140, 140, 140)');
 		console.log(player);
 		console.log('%c ------------------- ', 'color: rgb(140, 140, 140)');
-		if(queueChange)
+		if(queueChange && canUpdateQueue)
 			updateQueue();
 		if(nowPlayingChange)
 			updateNowPLaying();
@@ -305,7 +303,7 @@ var item =
 			<div class="que-channel">${info.snippet.channelTitle}</div>
 		</div>
 	</div>
-	<div class="que-delete">
+	<div class="que-delete action-button no-select">
 		<span>X</span>
 	</div>
 </div>

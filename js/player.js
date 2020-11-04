@@ -7,6 +7,10 @@ function init() {
 	console.log('player init');
 	createPlayer();
 	
+	$("#queueRefresh").click(function() { updateQueue(); $("#queue-container #vid-list").stop().fadeIn(200); });
+	$("#queueHide").click(function() { $("#queue-container #vid-list").stop().fadeOut(200); });
+	$("#queueShow").click(function() { $("#queue-container #vid-list").stop().fadeIn(200); });
+	
 }
 
 var mainPlayer;
@@ -35,7 +39,12 @@ function createPlayer() {
 }
 
 function refresh() {
-	comms('refreshPlayer');
+	comms('refreshPlayer', {}, function(response) {
+		if(response != -1 && response != player.playerTag) {
+			$("#tag").html("<h3>player tag: " + response + "</h3>");
+			player.playerTag = response;
+		}
+	});
 }
 
 function connectLost() {

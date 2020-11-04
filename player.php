@@ -35,14 +35,16 @@ $type = 'player'; require_once 'head.php'; ?>
 			<div id="add-err" class="noselect">coś poszło nie tak</div>
 		</div>
 		
+		<div id="queueRefresh" class="action-button no-select">Odśwież kolejkę</div>
+		<div id="queueHide" class="action-button no-select">ukryj kolejkę</div>
+		<div id="queueShow" class="action-button no-select">pokaż kolejkę</div>
+		
 		<div id="queue-container">
 			<div id="vid-list"></div>
 		</div>
 	</main>
 	
 </div>
-
-<script> var playerTag = <?='"'.$playerTag.'"'?>; </script>
 
 </body>
 

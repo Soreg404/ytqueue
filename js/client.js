@@ -2,6 +2,9 @@
 
 function init() {
 	
+	player.tag = playerTag;
+	
+	canUpdateQueue = true;
 	console.log('client init');
 	//$("#plConn-conf").click(chPlayer);
 	
