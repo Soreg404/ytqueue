@@ -50,7 +50,8 @@ switch($_POST['a']) {
 	
 	case 'refreshPlayer':
 		if(isset($_SESSION['player']['tag'])) {
-			echo $db->refreshPlayer($_SESSION['player']['tag']);
+			if($db->refreshPlayer($_SESSION['player']['tag']))
+				echo $_SESSION['player']['tag'];
 		} else echo -1;
 	break;
 	
