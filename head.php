@@ -10,10 +10,13 @@
 	
 	<meta name="description" content="YT QUEUE" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Odccjishie" />
 	<link rel="shortcut icon" type="image/x-icon" href="" />
 	
+	<link rel="stylesheet" href="css/incl.css" />
 	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/<?=$type?>.css" />
 
 	<script src="/lib/jquery.js"></script>
 	<script src="https://www.youtube.com/iframe_api"></script>

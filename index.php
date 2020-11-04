@@ -4,33 +4,53 @@ $type = 'home'; require_once 'head.php'; ?>
 
 <body>
 	
-	<div id="select-container">
-		
-		<div id="field-player">
-			<div>
-				<span>PLAYER</span>
-				<div id="create-player">
-					<form action="action.php" method="post">
-						<input type="submit" name="a" value="createPlayer" />
-					</form>
+	<div id="select-content">
+	
+		<div id="select-container" class="hcenter-notransform">
+			
+			<div class="tile no-select" id="field-player">
+				<div class="hvcenter">
+					<div class="tile-desc">
+						<span>UTWÓRZ</span>
+					</div>
 				</div>
 			</div>
+			
+			<div class="tile no-select" id="field-client">
+				<div class="hvcenter">
+					<div class="tile-desc">
+						<span>DOŁĄCZ</span>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 		
-		<div id="field-client">
-			<div>
-				<span>CLIENT</span>
-				<form method="post" action="action.php">
+		<div id="prompt-bg" style="display: none;"></div>
+		
+		<div class="prompt" id="create-prompt">
+			
+			<form action="action.php" method="post">
+			
+				<input type="submit" name="a" value="createPlayer" />
 				
-					<input id="f-connect" type="text" maxlength="10" name="tag" value="<?=err('reconnect')?>" />
-					<input type="submit" name="a" value="connectToPlayer" />
-					
-				</form>
-			</div>
+			</form>
+			
+		</div>
+		
+		<div class="prompt" id="connect-prompt">
+			
+			<form method="post" action="action.php">
+			
+				<input id="f-connect" class="upper-case" type="text" maxlength="10" name="tag" value="<?=err('reconnect', 1)?>" />
+				<input type="submit" name="a" value="connectToPlayer" />
+				
+			</form>
+			
 		</div>
 		
 	</div>
-
+	
 </body>
 
 </html>

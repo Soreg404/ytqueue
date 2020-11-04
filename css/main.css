@@ -1,12 +1,13 @@
+:root {
+	--theme-dark: rgb(20, 20, 20);
+	--theme-1: rgb(120, 60, 180);
+	--theme-2: rgb(60, 20, 120);
+}
+
 * {
 	margin: 0;
 }
 
-::selection {
-	color: rgb(0,0,0);
-	color: var(--font_d);
-	background-color: rgba(255, 255, 255, 0.5);
-}
 .noselect {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -32,19 +33,6 @@ body {
 	color: rgb(242, 242, 242);
 }
 
-.hover-underline {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	display: block;
-	width: 0;
-	height: 1px;
-	background-color: rgb(220, 20, 60);
-	transition: width 0.2s;
-}
-*:hover>.hover-underline {
-	width: 80%;
-}
 
 #add-bar-container {
 	position: relative;
